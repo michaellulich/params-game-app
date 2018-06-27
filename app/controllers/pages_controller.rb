@@ -12,17 +12,17 @@ class PagesController < ApplicationController
   end
 
   def guessing_game_method
-    guess_number = '36'
+    guess_number = 36
     @guess_number = guess_number
 
     input_number = params['number']
 
-    if input_number < guess_number
-      @too_low = "too low, guess again!"
-    elsif input_number > guess_number
-      @too_high = "too high, guess again!"
-    elsif input_number == guess_number
-      @correct = "you got it!"
+    if input_number.to_i < guess_number
+      @output_message = "too low, guess again!"
+    elsif input_number.to_i > guess_number
+      @output_message = "too high, guess again!"
+    elsif input_number.to_i == guess_number
+      @output_message = "you got it!"
     end
     render "guessing_game.json.jbuilder"
   end
