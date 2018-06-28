@@ -26,4 +26,17 @@ class PagesController < ApplicationController
     end
     render "guessing_game.json.jbuilder"
   end
+
+  def guessing_game_segments
+    guess_number = 36
+    input_number = params['variable']
+    if input_number.to_i < guess_number
+      @output_message = "too low, guess again!"
+    elsif input_number.to_i > guess_number
+      @output_message = "too high, guess again!"
+    elsif input_number.to_i == guess_number
+      @output_message = "you got it!"
+    end
+    render "guessing_game.json.jbuilder"
+  end
 end
