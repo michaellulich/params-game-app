@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   # get "/test_url" => "pages#query_pages_method"
   # get "/guessing_game" => "pages#guessing_game_method"
   get "/get_segments_params/:variable" => "pages#guessing_game_segments"
+
+  post "/body_params_url" => "pages#body_params_method"
 end
 

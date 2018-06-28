@@ -39,4 +39,11 @@ class PagesController < ApplicationController
     end
     render "guessing_game.json.jbuilder"
   end
+
+  def body_params_method
+    user_input = params["secret_info"]
+    @output_message = "the secret message is #{user_input}"
+    render "body_params.json.jbuilder"
+  end
+
 end
